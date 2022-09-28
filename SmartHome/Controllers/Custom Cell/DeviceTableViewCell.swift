@@ -7,7 +7,7 @@
 
 import UIKit
 protocol DeviceTableViewCellDelegate: AnyObject {
-    func deviceToggleTapped(cell: DeviceTableViewCell)
+    func isOnSwitchToggled(cell: DeviceTableViewCell)
 }
 
 class DeviceTableViewCell: UITableViewCell {
@@ -27,7 +27,7 @@ class DeviceTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func switchToggleTapped(_ sender: Any) {
-        delegate?.deviceToggleTapped(cell: self)
+        delegate?.isOnSwitchToggled(cell: self)
     }
     
 } // End of Class
