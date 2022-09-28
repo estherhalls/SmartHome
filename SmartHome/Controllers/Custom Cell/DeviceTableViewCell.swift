@@ -8,19 +8,15 @@
 import UIKit
 
 class DeviceTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var switchToggle: UISwitch!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    
+    // MARK: - Actions
     @IBAction func switchToggleTapped(_ sender: Any) {
     }
     
