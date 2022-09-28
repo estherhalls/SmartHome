@@ -63,6 +63,7 @@
 		EB6E3AE128E4EBAF00C01294 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EB6E3AE328E4EBC300C01294 /* View Controllers */,
 				EB6E3AE428E4EBD100C01294 /* Model Controllers */,
 				EB6E3AE228E4EBBA00C01294 /* Custom Cell */,
 			);
@@ -112,7 +113,6 @@
 		F78B15EF27729ACE0021C4E0 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
-				EB6E3AE328E4EBC300C01294 /* View Controllers */,
 				EB6E3AE128E4EBAF00C01294 /* Controllers */,
 				EB6E3AE028E4EBA200C01294 /* Models */,
 				41D325E1283685D800597C30 /* Storyboards */,
