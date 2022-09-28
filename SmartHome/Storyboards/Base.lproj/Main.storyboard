@@ -35,7 +35,6 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-MU-8xi">
                                                     <rect key="frame" x="324.5" y="0.0" width="43.5" height="31"/>
                                                     <connections>
-                                                        <action selector="addButtonTapped:" destination="gHx-Pe-lSZ" eventType="valueChanged" id="nYu-zH-75w"/>
                                                         <action selector="switchToggleTapped:" destination="dQ2-hY-Pp9" eventType="valueChanged" id="eu0-N2-cNJ"/>
                                                     </connections>
                                                 </switch>
@@ -60,7 +59,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Smart Home" id="ez0-BZ-hTF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="blN-tq-2Hv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="blN-tq-2Hv">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="gHx-Pe-lSZ" id="Dos-tx-9Z2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5o-bE-ayG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -62,8 +62,17 @@ class SmartHomeTableViewController: UITableViewController {
     
     // MARK: - Actions
 
-
     @IBAction func addButtonTapped(_ sender: Any) {
+        presentNewDeviceAlertController()
     }
     
 } // End of Class
+
+// MARK: - DeviceTableViewCellDelegate Conformance
+extension SmartHomeTableViewController: DeviceTableViewCellDelegate {
+    func isOnSwitchToggled(cell: DeviceTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {return}
+        let device = deviceController.devices[indexPath.row]
+        deviceController.toggleIsOn(device: device)
+    }
+}
