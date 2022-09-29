@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Devices Table View Controller-->
+        <!--Item-->
         <scene sceneID="tWY-br-1Sr">
             <objects>
                 <tableViewController storyboardIdentifier="RoomTableViewController" id="cnk-am-6zm" customClass="DevicesTableViewController" customModule="SmartHome" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,6 +61,7 @@
                             <outlet property="delegate" destination="cnk-am-6zm" id="80u-wn-ycH"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="R92-da-DPD"/>
                     <navigationItem key="navigationItem" id="pNB-su-pPd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="krC-5a-7S7">
                             <connections>
@@ -73,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="542" y="-135"/>
         </scene>
-        <!--Toggle All Devices View Controller-->
+        <!--Item-->
         <scene sceneID="vn5-MS-cFW">
             <objects>
                 <viewController storyboardIdentifier="ToggleAllViewController" id="Aru-hk-Ch4" customClass="ToggleAllDevicesViewController" customModule="SmartHome" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +90,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Turn All On"/>
                                         <connections>
-                                            <action selector="turnAllOnButtonTapped:" destination="Aru-hk-Ch4" eventType="touchUpInside" id="Bdm-Pr-ued"/>
+                                            <action selector="turnAllDevicesOn:" destination="zeo-5P-ITx" eventType="touchUpInside" id="haO-5F-BdZ"/>
+                                            <action selector="turnAllOnButtonTapped:" destination="Aru-hk-Ch4" eventType="touchUpInside" id="YNH-GP-GWr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4k-86-FOr">
@@ -97,8 +99,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Turn All Off"/>
                                         <connections>
-                                            <action selector="turnAllOffButtonTapped:" destination="Aru-hk-Ch4" eventType="touchUpInside" id="vbK-5L-Og9"/>
-                                            <action selector="turnAllOnButtonTapped:" destination="Aru-hk-Ch4" eventType="touchUpInside" id="N0q-wd-JwB"/>
+                                            <action selector="turnAllDevicesOff:" destination="zeo-5P-ITx" eventType="touchUpInside" id="1hh-5X-8bn"/>
+                                            <action selector="turnAllOffButtonTapped:" destination="Aru-hk-Ch4" eventType="touchUpInside" id="AAC-sC-3A4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -111,8 +113,10 @@
                             <constraint firstItem="enI-bq-CJp" firstAttribute="centerY" secondItem="fBb-YV-MVh" secondAttribute="centerY" id="UE6-re-MtR"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="owY-wO-hpa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgQ-SC-J30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zeo-5P-ITx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="541" y="615"/>
         </scene>
@@ -125,6 +129,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="cnk-am-6zm" kind="relationship" relationship="viewControllers" id="MDv-44-f22"/>
+                        <segue destination="Aru-hk-Ch4" kind="relationship" relationship="viewControllers" id="glY-eN-K0e"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSt-9s-qnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

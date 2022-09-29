@@ -8,8 +8,9 @@
 import UIKit
 // Global Property
 
-let turnOnAllNotificationName = Notification.Name(rawValue: "TurnOnAllDevicesNotification")
-let turnOffAllNotificationName = Notification.Name(rawValue: "TurnOffAllDevicesNotification")
+let turnOnAllNotificationName = Notification.Name( "turnAllDevicesOn")
+
+let turnOffAllNotificationName = Notification.Name("turnAllDevicesOff")
 
 class ToggleAllDevicesViewController: UIViewController {
 

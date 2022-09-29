@@ -14,6 +14,9 @@ class DevicesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.deviceController = DeviceController()
+        NotificationCenter.default.addObserver(self, selector: #selector(turnAllDevicesOn), name: turnOnAllNotificationName, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(turnAllDevicesOff), name: turnOffAllNotificationName, object: nil)
     }
 
     // MARK: - Table view data source
@@ -45,6 +48,18 @@ class DevicesTableViewController: UITableViewController {
         }
         alertController.addAction(confirmAction)
         present(alertController, animated: true)
+    }
+    
+    @objc func turnAllDevicesOn() {
+        deviceController.toggleAllDevicesOn(on:true)
+        print("turning all devices on")
+        tableView.reloadData()
+    }
+    
+    @objc func turnAllDevicesOff() {
+        deviceController.toggleAllDevicesOn(on:false)
+        print("turning all devices off")
+        tableView.reloadData()
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
