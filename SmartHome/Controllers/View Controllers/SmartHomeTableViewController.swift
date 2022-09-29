@@ -25,6 +25,7 @@ class SmartHomeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell else {return UITableViewCell()}
         let device = deviceController.devices[indexPath.row]
         cell.updateViews(device: device)
+        /// Step 3 of Delegation Pattern (TECHNICALLY step 4, but then we would forget to assign this delegate)
         cell.delegate = self
 
         return cell
@@ -69,8 +70,15 @@ class SmartHomeTableViewController: UITableViewController {
 } // End of Class
 
 // MARK: - DeviceTableViewCellDelegate Conformance
+/// Step 4 except 3 of Delegate Pattern
+/// To conform you must adopt, to adopt you must implement
+///
+/// Adopt:
 extension SmartHomeTableViewController: DeviceTableViewCellDelegate {
+    /// Refer to Step 1 body
+    /// Conform:
     func isOnSwitchToggled(cell: DeviceTableViewCell) {
+        /// Implement:
         guard let indexPath = tableView.indexPath(for: cell) else {return}
         let device = deviceController.devices[indexPath.row]
         deviceController.toggleIsOn(device: device)
